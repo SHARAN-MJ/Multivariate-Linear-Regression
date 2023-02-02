@@ -32,19 +32,19 @@ Print the predicted output.
 
 ## Program:
 ```
+
+
 import pandas as pd
 from sklearn import linear_model
-data= pd.read_csv("cars.csv")
-X=data[['Weight','Volume']]
-Y=data['CO2']
+df=pd.read_csv("car.csv")
+x=df[['Weight','Volume']]
+y=df['CO2']
 regr=linear_model.LinearRegression()
-regr.fit(X,Y)
+regr.fit(x,y)
 print("Coefficient:",regr.coef_)
 print("Intercept:",regr.intercept_)
-predictCO2=regr.predict([[3300,1300]])
-print("prediction CO2 for the corresponding weight and volume",predictCO2)
-
-
+predictedCO2=regr.predict([[3300,1300]])
+print("Predicted CO@ for the corresponding weight and volume",predictedCO2)
 
 
 
